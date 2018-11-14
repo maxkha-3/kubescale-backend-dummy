@@ -25,5 +25,5 @@ function queryTopNWorst($selector, $measure, $count, $interval) {
             break;
     }
 
-    echo json_encode($data);
+    http_response($data);
 }

@@ -40,5 +40,5 @@ function queryEsContribution($selector, $interval) {
     }
 
 
-    echo json_encode($data);
+    http_response($data);
 }

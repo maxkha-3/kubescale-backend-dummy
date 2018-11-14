@@ -29,5 +29,5 @@ function queryRealTime($selector, $measure, $sourceID, $interval) {
             break;
     }
 
-    echo json_encode($data);
+    http_response($data);
 }
