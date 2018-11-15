@@ -12,22 +12,25 @@ include('helpers/http_handler.php');
 if ($_GET["dataType"]) {
     $dataType = $_GET["dataType"];
     switch ($dataType) {
+        case "ping":
+            http_response("pong");
+            break;
         case "topNWorst":
-            if(!isset($_GET["selector"]) || !isset($_GET["measure"]) || !isset($_GET["count"]) || !isset($_GET["interval"])) {
+            if (!isset($_GET["selector"]) || !isset($_GET["measure"]) || !isset($_GET["threshold"]) || !isset($_GET["interval"])) {
                 http_response("Necessary parameters not defined");
             } else {
-                queryTopNWorst($_GET["selector"], $_GET["measure"], $_GET["count"], $_GET["interval"]);
+                queryTopNWorst($_GET["selector"], $_GET["measure"], $_GET["threshold"], $_GET["interval"]);
             }
             break;
         case "realTime":
-            if(!isset($_GET["selector"]) || !isset($_GET["measure"]) || !isset($_GET["sourceID"]) || !isset($_GET["interval"])) {
+            if (!isset($_GET["selector"]) || !isset($_GET["measure"]) || !isset($_GET["sourceID"]) || !isset($_GET["interval"])) {
                 http_response("Necessary parameters not defined");
             } else {
                 queryRealTime($_GET["selector"], $_GET["measure"], $_GET["sourceID"], $_GET["interval"]);
             }
             break;
         case "esContribution":
-            if(!isset($_GET["selector"]) || !isset($_GET["interval"])) {
+            if (!isset($_GET["selector"]) || !isset($_GET["interval"])) {
                 http_response("Necessary parameters not defined");
             } else {
                 queryEsContribution($_GET["selector"], $_GET["interval"]);
@@ -36,8 +39,4 @@ if ($_GET["dataType"]) {
         default:
             http_response("Invalid data type");
     }
-}
-
-if ($_GET["ping"]) {
-    http_response("pong");
 }
