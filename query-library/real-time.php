@@ -4,15 +4,15 @@ function queryRealTime($selector, $measure, $sourceID, $interval) {
     switch ($selector) {
         case "monitor":
             switch ($measure) {
-                case "delay":
+                case "avg_response_time":
                     $data = array(
-                        array("ID" => "10:30", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
-                        array("ID" => "10:35", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
-                        array("ID" => "10:40", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
-                        array("ID" => "10:45", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
-                        array("ID" => "10:50", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
-                        array("ID" => "10:55", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
-                        array("ID" => "11:00", "Data" => array("Near" => (rand(0, 1000)/200), "Far" => (rand(0, 1000)/200))),
+                        array("ID" => "10:30", "Data" => (rand(0, 1000)/200)),
+                        array("ID" => "10:35", "Data" => (rand(0, 1000)/200)),
+                        array("ID" => "10:40", "Data" => (rand(0, 1000)/200)),
+                        array("ID" => "10:45", "Data" => (rand(0, 1000)/200)),
+                        array("ID" => "10:50", "Data" => (rand(0, 1000)/200)),
+                        array("ID" => "10:55", "Data" => (rand(0, 1000)/200)),
+                        array("ID" => "11:00", "Data" => (rand(0, 1000)/200)),
                     );
                     break;
             }
